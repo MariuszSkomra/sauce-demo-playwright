@@ -3,7 +3,7 @@ import { CartPage } from "../page/CartPage"
 import { InventoryPage } from "../page/InventoryPage"
 import { LoginPage } from "../page/LoginPage"
 
-test.describe("Add to Cart", () => {
+test.describe("add to cart tests", () => {
 
     test.beforeEach(async ({ page }) => {
         const loginPage = new LoginPage(page)

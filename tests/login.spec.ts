@@ -2,7 +2,7 @@ import { test, expect } from "@playwright/test"
 import { LoginPage } from "../page/LoginPage"
 import { InventoryPage } from "../page/InventoryPage"
 
-test.describe("Login Test", () => {
+test.describe("login tests", () => {
 
     test.beforeEach(async ({ page }) => {
         new LoginPage(page).goto()
