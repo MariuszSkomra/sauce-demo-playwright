@@ -5,13 +5,13 @@ import { InventoryPage } from "../page/InventoryPage"
 test.describe("login tests", () => {
 
     test.beforeEach(async ({ page }) => {
-        new LoginPage(page).goto()
+        await new LoginPage(page).goto()
     })
 
     test("should login with correct credentials", async ({ page }) => {
         const loginPage = new LoginPage(page)
 
-        loginPage.loginAs("standard_user", "secret_sauce")
+        await loginPage.loginAs("standard_user", "secret_sauce")
 
         await expect(new InventoryPage(page).shoppingCart).toBeVisible()
     })
@@ -19,7 +19,7 @@ test.describe("login tests", () => {
     test("should display error when credentials are incorrect", async ({ page }) => {
         const loginPage = new LoginPage(page)
 
-        loginPage.loginAs("admin", "admin")
+        await loginPage.loginAs("admin", "admin")
 
         await expect(loginPage.errorMessage).toHaveText("Epic sadface: Username and password do not match any user in this service")
     })
@@ -27,7 +27,7 @@ test.describe("login tests", () => {
     test("should display error when user is locked out", async ({ page }) => {
         const loginPage = new LoginPage(page)
 
-        loginPage.loginAs("locked_out_user", "secret_sauce")
+        await loginPage.loginAs("locked_out_user", "secret_sauce")
 
         await expect(loginPage.errorMessage).toHaveText("Epic sadface: Sorry, this user has been locked out.")
     })
@@ -36,7 +36,7 @@ test.describe("login tests", () => {
     test("should login as user with performance glitch", async ({ page }) => {
         const loginPage = new LoginPage(page)
 
-        loginPage.loginAs("performance_glitch_user", "secret_sauce")
+        await loginPage.loginAs("performance_glitch_user", "secret_sauce")
 
         await expect(new InventoryPage(page).shoppingCart).toBeVisible({ timeout: 10 * 1000 })
     })

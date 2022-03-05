@@ -18,6 +18,10 @@ export class CheckoutPage {
         this.errorMessage = page.locator(".error-message-container")
     }
 
+    goto = async (): Promise<void> => {
+        await this.page.goto("/checkout-step-one.html")
+    }
+
     fillFormAndSubmit = async (args: { firstName: string, lastName: string, postalCode: string }): Promise<void> => {
         await this.firstNameInput.fill(args.firstName)
         await this.lastNameInput.fill(args.lastName)

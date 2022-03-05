@@ -16,7 +16,9 @@ export class LoginPage {
         this.errorMessage = page.locator(".error-message-container")
     }
 
-    goto = async (): Promise<void> => { await this.page.goto("https://www.saucedemo.com/") }
+    goto = async (): Promise<void> => {
+        await this.page.goto("/")
+    }
 
     loginAs = async (username: string, password: string): Promise<void> => {
         await this.usernameInput.type(username)

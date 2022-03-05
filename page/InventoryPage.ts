@@ -13,9 +13,6 @@ export class InventoryPage {
     }
 
     selectItem = async (itemName: string): Promise<void> => {
-        await this.page.locator(`xpath=//*[@class='inventory_item_name' and text()='${itemName}']`)
-            .locator("xpath=.//ancestor::*[@class='inventory_item']")
-            .locator("xpath=.//button")
-            .click()
+        await this.page.locator(`xpath=//*[@class='inventory_item' and .//*[@class='inventory_item_name' and text()='${itemName}']]//button`).click()
     }
 }
