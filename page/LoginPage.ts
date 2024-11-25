@@ -21,8 +21,8 @@ export class LoginPage {
     }
 
     loginAs = async (username: string, password: string): Promise<void> => {
-        await this.usernameInput.type(username)
-        await this.passwordInput.type(password)
+        await this.usernameInput.fill(username)
+        await this.passwordInput.fill(password)
         await this.loginButton.click()
     }
 }
