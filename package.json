@@ -1,22 +1,23 @@
 {
-  "name": "sauce-demo-playwright",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {},
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/MariuszSkomra/sauce-demo-playwright.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/MariuszSkomra/sauce-demo-playwright/issues"
-  },
-  "homepage": "https://github.com/MariuszSkomra/sauce-demo-playwright#readme",
-  "devDependencies": {
-    "@playwright/test": "1.49.0",
-    "@types/node": "22.9.3"
-  }
+    "name": "sauce-demo-playwright",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {},
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/MariuszSkomra/sauce-demo-playwright.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/MariuszSkomra/sauce-demo-playwright/issues"
+    },
+    "homepage": "https://github.com/MariuszSkomra/sauce-demo-playwright#readme",
+    "devDependencies": {
+        "@playwright/test": "1.49.0",
+        "@types/node": "22.9.3",
+        "prettier": "3.4.1"
+    }
 }
