@@ -12,5 +12,8 @@ export default [
     languageOptions: {
       globals: globals.node,
     },
+    rules: {
+      "playwright/expect-expect": "error",
+    },
   },
 ];
