@@ -8,12 +8,17 @@ export default [
   ...tseslint.configs.recommended,
   playwright.configs["flat/recommended"],
   {
-    files: ["**/*.{js,mjs,cjs,ts}"],
+    files: ["**/*.ts"],
     languageOptions: {
       globals: globals.node,
+      parserOptions: {
+        project: true,
+      },
     },
     rules: {
       "playwright/expect-expect": "error",
+      "@typescript-eslint/no-floating-promises": "error",
+      "@typescript-eslint/await-thenable": "error",
     },
   },
 ];
