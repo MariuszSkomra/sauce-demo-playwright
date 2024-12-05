@@ -16,6 +16,7 @@
   },
   "homepage": "https://github.com/MariuszSkomra/sauce-demo-playwright#readme",
   "devDependencies": {
-    "@playwright/test": "^1.19.2"
+    "@playwright/test": "1.49.0",
+    "@types/node": "22.9.3"
   }
 }

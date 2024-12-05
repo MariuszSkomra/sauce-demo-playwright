@@ -3,11 +3,11 @@ import { devices } from '@playwright/test';
 
 const config: PlaywrightTestConfig = {
   testDir: './tests',
-  reporter: 'html',
+  reporter: [["list"], ["html", { open: "never" }]],
   use: {
     baseURL: 'https://www.saucedemo.com',
     trace: 'retain-on-failure',
-    screenshot: 'only-on-failure',
+    screenshot: { mode: 'only-on-failure', fullPage: true },
   },
   projects: [
     {
