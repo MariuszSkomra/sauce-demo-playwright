@@ -8,7 +8,7 @@ test.describe("login tests", () => {
         await new LoginPage(page).goto()
     })
 
-    test.only("should login with correct credentials", async ({ page }) => {
+    test("should login with correct credentials", async ({ page }) => {
         const loginPage = new LoginPage(page)
 
         await loginPage.loginAs("standard_user", "secret_sauce")
