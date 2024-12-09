@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "prettierCheck": "prettier . --check",
+    "prettierWrite": "prettier . --write"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MariuszSkomra/sauce-demo-playwright.git"
@@ -17,6 +20,7 @@
   "homepage": "https://github.com/MariuszSkomra/sauce-demo-playwright#readme",
   "devDependencies": {
     "@playwright/test": "1.49.0",
-    "@types/node": "22.9.3"
+    "@types/node": "22.9.3",
+    "prettier": "3.4.1"
   }
 }

@@ -22,3 +22,19 @@ Run above commands with `--headed` flag.
 ```
 npx playwright show-report
 ```
+
+# Code analysis
+
+## prettier
+
+To check code formatting run:
+
+```
+npm run prettierCheck
+```
+
+To format code run:
+
+```
+npm run prettierWrite
+```
