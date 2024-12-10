@@ -9,10 +9,10 @@ export class LoginPage {
 
   constructor(page: Page) {
     this.page = page;
-    this.usernameInput = page.locator("#user-name");
-    this.passwordInput = page.locator("#password");
-    this.loginButton = page.locator("#login-button");
-    this.errorMessage = page.locator(".error-message-container");
+    this.usernameInput = page.getByTestId("username");
+    this.passwordInput = page.getByTestId("password");
+    this.loginButton = page.getByTestId("login-button");
+    this.errorMessage = page.getByTestId("error");
   }
 
   goto = async (): Promise<void> => {
