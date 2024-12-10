@@ -8,7 +8,8 @@ test.describe("login tests", () => {
         await new LoginPage(page).goto()
     })
 
-    test("should login with correct credentials", async ({ page }) => {
+    // TODO: remove only before PR
+    test.only("should login with correct credentials", async ({ page }) => {
         const loginPage = new LoginPage(page)
 
         await loginPage.loginAs("standard_user", "secret_sauce")
@@ -39,5 +40,14 @@ test.describe("login tests", () => {
         await loginPage.loginAs("performance_glitch_user", "secret_sauce")
 
         await expect(new InventoryPage(page).shoppingCart).toBeVisible({ timeout: 10 * 1000 })
+    })
+
+    // TODO: remove test before PR
+    test.only("should fail", async ({ page }) => {
+        const loginPage = new LoginPage(page)
+
+        await loginPage.loginAs("admin", "admin")
+
+        await expect(new InventoryPage(page).shoppingCart).toBeVisible()
     })
 })
