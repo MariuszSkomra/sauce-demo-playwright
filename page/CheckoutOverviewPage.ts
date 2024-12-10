@@ -6,7 +6,7 @@ export class CheckoutOveriewPage {
 
   constructor(page: Page) {
     this.page = page;
-    this.inventoryItemNames = page.locator(".inventory_item_name");
+    this.inventoryItemNames = page.getByTestId("inventory-item-name");
   }
 
   goto = async (): Promise<void> => {

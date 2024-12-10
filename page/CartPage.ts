@@ -7,7 +7,7 @@ export class CartPage {
 
   constructor(page: Page) {
     this.page = page;
-    this.inventoryItemNames = page.locator(".inventory_item_name");
-    this.checkoutButton = page.locator("#checkout");
+    this.inventoryItemNames = page.getByTestId("inventory-item-name");
+    this.checkoutButton = page.getByTestId("checkout");
   }
 }

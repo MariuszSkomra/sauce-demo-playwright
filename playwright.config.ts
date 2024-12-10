@@ -8,6 +8,7 @@ const config: PlaywrightTestConfig = {
     baseURL: "https://www.saucedemo.com",
     trace: "retain-on-failure",
     screenshot: { mode: "only-on-failure", fullPage: true },
+    testIdAttribute: "data-test",
   },
   projects: [
     {
