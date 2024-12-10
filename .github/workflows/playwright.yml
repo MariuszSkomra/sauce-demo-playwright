@@ -28,11 +28,13 @@ jobs:
           path: playwright-report/
           retention-days: 30
       - name: Upload report for pages
+        if: ${{ !cancelled() }}
         uses: actions/upload-pages-artifact@v3
         with:
           path: playwright-report/
 
   deploy-pages:
+    if: ${{ !cancelled() }}
     needs: run-all-tests
     runs-on: ubuntu-latest
     permissions:
