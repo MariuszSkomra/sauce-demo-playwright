@@ -38,3 +38,13 @@ To format code run:
 ```
 npm run prettierWrite
 ```
+
+## eslint
+
+To check code run:
+
+```
+npm run eslintCheck
+```
+
+This command also runs prettier.

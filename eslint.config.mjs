@@ -1,11 +1,13 @@
 import pluginJs from "@eslint/js";
 import playwright from "eslint-plugin-playwright";
+import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended";
 import globals from "globals";
 import tseslint from "typescript-eslint";
 
 export default [
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
+  eslintPluginPrettierRecommended,
   playwright.configs["flat/recommended"],
   {
     files: ["**/*.ts"],
