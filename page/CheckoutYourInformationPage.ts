@@ -10,11 +10,11 @@ export class CheckoutYourInformationPage {
 
   constructor(page: Page) {
     this.page = page;
-    this.firstNameInput = page.locator("#first-name");
-    this.lastNameInput = page.locator("#last-name");
-    this.postalCodeInput = page.locator("#postal-code");
-    this.continueButton = page.locator("#continue");
-    this.errorMessage = page.locator(".error-message-container");
+    this.firstNameInput = page.getByTestId("firstName");
+    this.lastNameInput = page.getByTestId("lastName");
+    this.postalCodeInput = page.getByTestId("postalCode");
+    this.continueButton = page.getByTestId("continue");
+    this.errorMessage = page.getByTestId("error");
   }
 
   goto = async (): Promise<void> => {
