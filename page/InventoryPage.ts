@@ -1,22 +1,26 @@
 import { Locator, Page } from "@playwright/test";
 
 export class InventoryPage {
+  readonly page: Page;
+  readonly shoppingCart: Locator;
+  readonly shippingCartBadge: Locator;
+  readonly sortBy: Locator;
+  readonly inventoryItem: Locator;
+  readonly inventoryItemNames: Locator;
 
-    readonly page: Page
-    readonly shoppingCart: Locator
-    readonly shippingCartBadge: Locator
-    readonly sortBy: Locator
-    readonly inventoryItemNames: Locator
+  constructor(page: Page) {
+    this.page = page;
+    this.shoppingCart = page.locator("#shopping_cart_container");
+    this.shippingCartBadge = page.getByTestId("shopping-cart-badge");
+    this.sortBy = page.getByTestId("product-sort-container");
+    this.inventoryItem = page.getByTestId("inventory-item");
+    this.inventoryItemNames = page.getByTestId("inventory-item-name");
+  }
 
-    constructor(page: Page) {
-        this.page = page
-        this.shoppingCart = page.locator("#shopping_cart_container")
-        this.shippingCartBadge = page.locator(".shopping_cart_badge")
-        this.sortBy = page.locator("data-test=product_sort_container")
-        this.inventoryItemNames = page.locator(".inventory_item_name")
-    }
-
-    selectItem = async (itemName: string): Promise<void> => {
-        await this.page.locator(`xpath=//*[@class='inventory_item' and .//*[@class='inventory_item_name' and text()='${itemName}']]//button`).click()
-    }
+  selectItem = async (itemName: string): Promise<void> => {
+    await this.inventoryItem
+      .filter({ has: this.inventoryItemNames.getByText(itemName) })
+      .locator("button")
+      .click();
+  };
 }

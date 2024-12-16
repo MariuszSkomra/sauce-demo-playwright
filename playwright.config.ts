@@ -1,22 +1,23 @@
-import type { PlaywrightTestConfig } from '@playwright/test';
-import { devices } from '@playwright/test';
+import type { PlaywrightTestConfig } from "@playwright/test";
+import { devices } from "@playwright/test";
 
 const config: PlaywrightTestConfig = {
-  testDir: './tests',
+  testDir: "./tests",
   reporter: [["list"], ["html", { open: "never" }]],
   use: {
-    baseURL: 'https://www.saucedemo.com',
-    trace: 'retain-on-failure',
-    screenshot: { mode: 'only-on-failure', fullPage: true },
+    baseURL: "https://www.saucedemo.com",
+    trace: "retain-on-failure",
+    screenshot: { mode: "only-on-failure", fullPage: true },
+    testIdAttribute: "data-test",
   },
   projects: [
     {
-      name: 'chromium',
+      name: "chromium",
       use: {
-        ...devices['Desktop Chrome'],
-      }
-    }
-  ]
+        ...devices["Desktop Chrome"],
+      },
+    },
+  ],
 };
 
 export default config;

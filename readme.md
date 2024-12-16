@@ -35,3 +35,29 @@ npx playwright show-report
 HTML report is being published on GitHub Pages under [link](https://mariuszskomra.github.io/sauce-demo-playwright/).
 
 It also can be open locally - download `github-pages` artifact, unarchive it and open `index.html`.
+
+# Code analysis
+
+## prettier
+
+To check code formatting run:
+
+```
+npm run prettierCheck
+```
+
+To format code run:
+
+```
+npm run prettierWrite
+```
+
+## eslint
+
+To check code run:
+
+```
+npm run eslintCheck
+```
+
+This command also runs prettier.
