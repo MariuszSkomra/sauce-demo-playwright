@@ -1,0 +1,19 @@
+name: Run eslint check
+
+on:
+  pull_request: 
+
+jobs:
+  run-eslint-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+      - name: Install dependencies
+        run: npm ci
+      - name: Run eslint check
+        run: npm run eslintCheck
