@@ -16,9 +16,9 @@ test.describe("login tests", () => {
   });
 
   test("should display error when credentials are incorrect", async ({ page }) => {
-    const loginPage = new LoginPage(page);
+const loginPage = new LoginPage(page);
 
-    await loginPage.loginAs("admin", "admin");
+    loginPage.loginAs("admin", "admin");
 
     await expect(loginPage.errorMessage).toHaveText("Epic sadface: Username and password do not match any user in this service");
   });
